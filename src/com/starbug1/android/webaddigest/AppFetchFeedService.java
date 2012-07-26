@@ -88,7 +88,6 @@ public class AppFetchFeedService extends FetchFeedService {
 
 			@Override
 			public String getImageUrl(String content, NewsListItem item) {
-				Log.d(TAG, content);
 				Matcher m = adronContent_.matcher(content);
 				if (!m.find()) {
 					return null;
@@ -151,8 +150,6 @@ public class AppFetchFeedService extends FetchFeedService {
 	
 	@Override
 	public void onCreate() {
-		com.starbug1.android.newsapp.utils.ResourceProxy.R.init(R.class);
-
 		super.onCreate();
 	}
 

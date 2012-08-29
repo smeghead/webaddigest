@@ -163,6 +163,11 @@ public class AppFetchFeedService extends FetchFeedService {
 //		}
 		return super.isValidItem(item);
 	}
+
+	@Override
+	protected Class getMainActivity() {
+		return AppMainActivity.class;
+	}
 	
 	
 }

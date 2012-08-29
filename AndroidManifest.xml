@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.starbug1.android.webaddigest"
-    android:versionCode="4"
-    android:versionName="0.0.4" >
+    android:versionCode="10"
+    android:versionName="0.1.0" >
     <uses-sdk android:minSdkVersion="7" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="false" android:theme="@style/CustomTheme">
-        <activity android:name="com.starbug1.android.newsapp.MainActivity"
+        <activity android:name="com.starbug1.android.webaddigest.AppMainActivity"
                 android:label="@string/app_name"
                 android:configChanges="orientation|keyboardHidden">
             <intent-filter>
@@ -16,11 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.starbug1.android.newsapp.EntryActivity"
+        <activity android:name="com.starbug1.android.webaddigest.AppEntryActivity"
                 android:label="@string/app_name"
                 android:configChanges="orientation|keyboardHidden">
         </activity>
-        <activity android:name="com.starbug1.android.newsapp.FavoriteListActivity"
+        <activity android:name="com.starbug1.android.webaddigest.AppFavoriteListActivity"
                 android:label="@string/app_name"
                 android:configChanges="orientation|keyboardHidden">
         </activity>
@@ -37,33 +37,32 @@
         </receiver>
         <service android:enabled="true" android:name="com.starbug1.android.webaddigest.AppFetchFeedService" />
         <activity android:name="com.starbug1.android.mudanews.NewsDetailActivity"></activity>
+        <!-- ASB Support Activity -->
         <activity
-                android:name="com.google.ads.AdActivity" 
-                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-        <!-- PaRappa Support Activity -->
-        <activity
-            android:name="me.parappa.sdk.activity.SupportActivity"
+            android:name="com.motionbeat.labs.adstirbaas.sdk.activity.SupportActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|keyboardHidden">
         </activity>
-        <!-- PaRappa Notify Activity -->
+        <!-- ASB Notify Activity -->
         <activity
-            android:name="me.parappa.sdk.activity.NotifyActivity"
+            android:name="com.motionbeat.labs.adstirbaas.sdk.activity.NotifyActivity"
             android:label="@string/app_name"
             android:configChanges="orientation|keyboardHidden" />
-        <!-- PaRappa Notify Service -->
-        <service android:name="me.parappa.sdk.service.NotifyService" />
-        <!-- PaRappa Receiver -->
-        <receiver android:name="me.parappa.sdk.receiver.StartReceiver">
+        <!-- ASB Notify Service -->
+        <service android:name="com.motionbeat.labs.adstirbaas.sdk.service.NotifyService" />
+        <!-- ASB Receiver -->
+        <receiver android:name="com.motionbeat.labs.adstirbaas.sdk.receiver.StartReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
                 <action android:name="com.android.vending.INSTALL_REFERRER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-        <!-- PaRappa Application Code Setting -->
-        <!-- 
-        <meta-data android:name="PARAPPA_APP_CODE" android:value="xw1bChr0"/>
-         -->
+        <!-- ASB Application Code Setting -->
+        <meta-data android:name="ASB_APP_CODE" android:value="AA17okVR"/>
+        
+        <activity android:name="com.google.ads.AdActivity"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <meta-data android:name="ADSTIR_APP_ID" android:value="MEDIA-da2ec531" />
     </application>
 </manifest>
